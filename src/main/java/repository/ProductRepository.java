@@ -3,10 +3,12 @@ package repository;
 import domain.Product;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @Data
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class ProductRepository {
     private Product[] products = new Product[0];
