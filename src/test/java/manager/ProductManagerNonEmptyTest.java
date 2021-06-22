@@ -62,8 +62,8 @@ public class ProductManagerNonEmptyTest {
     }
 
     @Test
-    public void shouldFindBookByAuthor(){
-       Product[] actual = manager.searchBy("Стендаль");
+    public void shouldFindBookByAuthor() {
+        Product[] actual = manager.searchBy("Стендаль");
         Product[] expected = new Product[]{item4};
         assertArrayEquals(expected, actual);
     }

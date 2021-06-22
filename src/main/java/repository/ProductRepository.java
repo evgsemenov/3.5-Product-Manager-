@@ -7,13 +7,12 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 
 public class ProductRepository {
     private Product[] products = new Product[0];
 
-    public void save(Product product){
+    public void save(Product product) {
         int resultLength = products.length + 1;
         Product[] tmp = new Product[resultLength];
         System.arraycopy(products, 0, tmp, 0, products.length);
@@ -22,11 +21,11 @@ public class ProductRepository {
         products = tmp;
     }
 
-    public Product[] findAll(){
+    public Product[] findAll() {
         return products;
     }
 
-    public void removeById(int id){
+    public void removeById(int id) {
         int length = products.length - 1;
         Product[] tmp = new Product[length];
         int index = 0;

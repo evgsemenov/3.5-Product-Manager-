@@ -10,13 +10,11 @@ import lombok.RequiredArgsConstructor;
 import repository.ProductRepository;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+@RequiredArgsConstructor
 
 
 public class ProductManager {
-    private ProductRepository repository;
-
+    private ProductRepository repository = new ProductRepository();
     public void save(Product product) {
         repository.save(product);
     }
