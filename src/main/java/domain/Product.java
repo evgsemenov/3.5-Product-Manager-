@@ -6,11 +6,25 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 
 public class Product {
     private int id;
     private int cost;
     private String name;
+
+    private Book book = new Book();
+    private Smartphone smartphone = new Smartphone();
+
+    public Product(int i, int i1, String legacy_product) {
+    }
+
+    public boolean matches(Product product, String text) {
+        if (product.getName().contains(text)) {
+            return true;
+        }
+        return false;
+    }
 }
+
