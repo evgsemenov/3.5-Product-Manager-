@@ -24,6 +24,7 @@ public class ProductManagerNonEmptyTest {
     private Smartphone item5 = new Smartphone(6, 15550, "Galaxy A10 32Gb", "Samsung");
     private Smartphone item6 = new Smartphone(7, 79990, "Galaxy S20 256 Gb", "Samsung");
     private Smartphone item7 = new Smartphone(8, 890, "Nokia 3310", "Nokia");
+    private Product item8 = new Product (1, 100, "Legacy Product");
 
     @BeforeEach
     public void setup() {
@@ -34,6 +35,7 @@ public class ProductManagerNonEmptyTest {
         manager.save(item5);
         manager.save(item6);
         manager.save(item7);
+        manager.save(item8);
     }
 
     @Test
@@ -85,6 +87,14 @@ public class ProductManagerNonEmptyTest {
         Product[] expected = new Product[]{};
         assertArrayEquals(expected, actual);
     }
+    @Test
+    public void shouldFindProductByNameIfManyProductsTest() {
+        Product[] actual = manager.searchBy("Legacy Product");
+        Product[] expected = new Product[]{};
+        assertArrayEquals(expected, actual);
+    }
+
+
 }
 
 
