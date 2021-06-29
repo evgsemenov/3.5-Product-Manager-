@@ -6,16 +6,12 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 
 public class Product {
     private int id;
     private int cost;
     private String name;
-
-    private Book book = new Book();
-    private Smartphone smartphone = new Smartphone();
 
     public Product(int i, int i1, String legacy_product) {
     }

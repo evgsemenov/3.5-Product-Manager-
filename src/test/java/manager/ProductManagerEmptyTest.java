@@ -37,6 +37,5 @@ public class ProductManagerEmptyTest {
         Product[] actual = manager.searchBy("Nokia");
         Product[] expected = new Product[]{};
         assertArrayEquals(expected, actual);
-
     }
 }

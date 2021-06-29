@@ -35,25 +35,20 @@ public class ProductRepository {
 
 
     public void removeById(int id) {
-        {
-            try {
-                if (findById(id) == null) ;
-            } catch (ru.netology.exception.NotFoundException e) {
-                e.printStackTrace();
-                System.out.println("ID" + id + "not found");
-            }
-            int length = products.length - 1;
-            Product[] tmp = new Product[length];
-            int index = 0;
-            for (
-                    Product product : products) {
-                if (product.getId() != id) {
-                    tmp[index] = product;
-                    index++;
-                }
-            }
-            products = tmp;
+        if (findById(id) == null) {
+            throw new ru.netology.exception.NotFoundException("ID " + id + " not found!");
         }
+        int length = products.length - 1;
+        Product[] tmp = new Product[length];
+        int index = 0;
+        for (Product product : products) {
+            if (product.getId() != id) {
+                tmp[index] = product;
+                index++;
+            }
+        }
+        products = tmp;
     }
 }
+
 
