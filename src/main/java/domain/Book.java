@@ -2,29 +2,28 @@ package domain;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 
 
 public class Book extends Product {
     private String author;
 
-    public Book() {
-    }
-
     public Book(int id, int cost, String name, String author) {
         super(id, cost, name);
         this.author = author;
     }
 
-//    @Override
+@Override
+
     public boolean matches(String text) {
-        Product product = new Product();
-        if (super.matches(product, text)) {
+        if (super.matches(text)) {
             return true;
         }
-        if (getAuthor().contains(text)) {
+        if (this.author.contains(text)) {
             return true;
         }
         return false;

@@ -1,10 +1,9 @@
 package repository;
 
 import domain.Product;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import exception.NotFoundException;
 
 @Data
 @RequiredArgsConstructor
@@ -36,7 +35,7 @@ public class ProductRepository {
 
     public void removeById(int id) {
         if (findById(id) == null) {
-            throw new ru.netology.exception.NotFoundException("ID " + id + " not found!");
+            throw new NotFoundException("ID " + id + " not found!");
         }
         int length = products.length - 1;
         Product[] tmp = new Product[length];
